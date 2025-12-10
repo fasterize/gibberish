@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'json'
 require 'delegate'
 require 'securerandom'
@@ -298,7 +300,7 @@ module Gibberish
       if supplied_salt
         return supplied_salt.to_s[0,8].ljust(8,'.')
       end
-      s = ''
+      s = +''
       8.times {s << rand(255).chr}
       s
     end
